@@ -2,10 +2,78 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 20px;
+}
+
 header {
   text-align: center;
+  background-color: #22577E;
+  padding: 10px 40px;
 
   h1 {
     font-size: 40px;
+    color: white;
+  }
+}
+
+main {
+  display: flex;
+  padding: 40px;
+}
+
+.left-section {
+  flex: 3;
+
+  #city-history {
+    margin-top: 20px;
+    li {
+      margin-top: 10px;
+    }
+  }
+}
+
+.right-section {
+  flex: 7;
+}
+
+.box {
+  border: solid 2px #95D1CC;
+  border-radius: 10px;
+  padding: 30px 40px;
+  font-size: 20px;
+
+  .city-name-control {
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    margin-top: 12px;
+  }
+
+  .low {
+    color: white;
+    background-color: green;
+    padding: 4px 8px 4px 7px;
+    border-radius: 5px;
+  }
+
+  .moderate {
+    background-color: yellow;
+    color: black;
+    padding: 4px 8px 4px 7px;
+    border-radius: 5px;
+  }
+
+  .high {
+    background-color: red;
+    color: white;
+    padding: 4px 8px 4px 7px;
+    border-radius: 5px;
   }
 }

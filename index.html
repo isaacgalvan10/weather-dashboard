@@ -13,7 +13,7 @@
     <h1>Weather Dashboard</h1>
   </header>
   <main>
-    <aside>
+    <aside class="left-section">
       <h2>Search for a City:</h2>
       <form action="" id="search-form">
         <input type="text" name="city" id="city" placeholder="Houston">
@@ -24,6 +24,18 @@
         </ul>
       </div>
     </aside>
+    <div class="right-section">
+      <div class="box">
+        <div class="city-name-control">
+          <h2 id="city-name">City</h2>
+          <img id="weather-img"/>
+        </div>
+        <p>Temp: <span id="temp"></span></p>
+        <p>Wind: <span id="wind"></span></p>
+        <p>Humidity: <span id="humidity"></span></p>
+        <p>UV Index: <span id="uv"></span></p>
+      </div>
+    </div>
   </main>
   <script src="./assets/script.js"></script>
 </body>

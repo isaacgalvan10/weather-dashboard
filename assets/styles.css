@@ -2,11 +2,90 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 20px;
+}
+
 header {
   text-align: center;
+  background-color: #22577E;
+  padding: 10px 40px;
 }
 
 header h1 {
   font-size: 40px;
+  color: white;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 40px;
+}
+
+.left-section {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.left-section #city-history {
+  margin-top: 20px;
+}
+
+.left-section #city-history li {
+  margin-top: 10px;
+}
+
+.right-section {
+  -webkit-box-flex: 7;
+      -ms-flex: 7;
+          flex: 7;
+}
+
+.box {
+  border: solid 2px #95D1CC;
+  border-radius: 10px;
+  padding: 30px 40px;
+  font-size: 20px;
+}
+
+.box .city-name-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box p {
+  margin-top: 12px;
+}
+
+.box .low {
+  color: white;
+  background-color: green;
+  padding: 4px 8px 4px 7px;
+  border-radius: 5px;
+}
+
+.box .moderate {
+  background-color: yellow;
+  color: black;
+  padding: 4px 8px 4px 7px;
+  border-radius: 5px;
+}
+
+.box .high {
+  background-color: red;
+  color: white;
+  padding: 4px 8px 4px 7px;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=styles.css.map */
