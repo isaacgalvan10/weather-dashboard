@@ -33,6 +33,7 @@ main {
     margin-top: 20px;
     li {
       margin-top: 10px;
+      cursor: pointer;
     }
   }
 }
@@ -75,5 +76,31 @@ main {
     color: white;
     padding: 4px 8px 4px 7px;
     border-radius: 5px;
+  }
+}
+
+#forecast-section {
+  margin-top: 40px;
+}
+
+#card-wrapper {
+  margin-top: 30px;
+  display: flex;
+
+  .card {
+    background-color: #22577E;
+    color: white;
+    padding: 20px;
+    margin-right: 20px;
+    width: 200px;
+    border-radius: 10px;
+
+    h3 {
+      font-size: 22px;
+    }
+
+    p {
+      margin-top: 10px;
+    }
   }
 }

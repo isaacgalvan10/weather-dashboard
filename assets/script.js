@@ -9,6 +9,7 @@ let currentTemp = document.getElementById('temp');
 let currentWind = document.getElementById('wind');
 let currentHumidity = document.getElementById('humidity');
 let currentUV = document.getElementById('uv');
+let forecastEl = document.getElementById('card-wrapper');
 
 // Search form submit listener
 searchForm.addEventListener('submit', function(e){
@@ -16,7 +17,6 @@ searchForm.addEventListener('submit', function(e){
   if (cityInput.value !== '') {
     city = cityInput.value;
   }
-  console.log(city);
   getWeather();
   addCitiesList(city);
   cityInput.value = '';
@@ -24,7 +24,7 @@ searchForm.addEventListener('submit', function(e){
 
 // Calls the API with city and returns data
 function getWeather() {
-  let api = `https://api.weatherapi.com/v1/forecast.json?key=b3d0f4cbc3c3431384d204030213112&q=${city}&days=5&aqi=no&alerts=no`;
+  let api = `https://api.weatherapi.com/v1/forecast.json?key=b3d0f4cbc3c3431384d204030213112&q=${city}&days=3&aqi=no&alerts=no`;
   console.log(api);
   fetch(api)
   .then(res => res.json())
@@ -44,7 +44,34 @@ function getWeather() {
     } else if (data.current.uv >= 7 ) {
       currentUV.classList.add('high');
     };
+
+    forecastLoop(data.forecast.forecastday);
   });
+};
+
+function forecastLoop(arr) {
+  forecastEl.innerHTML = '';
+  for(let i = 0; i < arr.length; i++) {
+    let div = document.createElement('div');
+    div.classList = 'card';
+    let h3 = document.createElement('h3');
+    h3.textContent = arr[i].date;
+    let img = document.createElement('img');
+    img.src = arr[i].day.condition.icon;
+    let tempFore = document.createElement('p');
+    let windFore = document.createElement('p');
+    let humidityFore = document.createElement('p');
+    tempFore.textContent = `Avg Temp: ${arr[i].day.avgtemp_f}°F`;
+    windFore.textContent = `Max Wind: ${arr[i].day.maxwind_mph} MPH`;
+    humidityFore.textContent = `Avg Humidity: ${arr[i].day.avghumidity}%`;
+    div.appendChild(h3);
+    div.appendChild(img);
+    div.appendChild(tempFore);
+    div.appendChild(windFore);
+    div.appendChild(humidityFore);
+    console.log(arr[i].day);
+    forecastEl.appendChild(div);
+  }
 };
 
 function init() {
